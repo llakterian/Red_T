@@ -209,7 +209,8 @@
     </div>
     
     <script>
-        const socket = io();
+        const socket = io({ transports: ['websocket'] });
+        
         let selectedDevice = null;
         let isConnected = false;
         
@@ -227,16 +228,15 @@
         
         // Tab switching
         document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none'));
-                
-                tab.classList.add('active');
-                const tabName = tab.getAttribute('data-tab');
-                document.getElementById(`${tabName}Tab`).style.display = 'block';
-            });
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
         
-        
+        tab.classList.add('active');
+        const tabName = tab.getAttribute('data-tab');
+        document.getElementById(`${tabName}Tab`).style.display = 'block';
+    });
+});
         // Socket.io event handlers
         socket.on('connect', () => {
             logMessage('Connected to Red_T server');

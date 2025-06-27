@@ -12,39 +12,56 @@ class BluetoothScanner:
         self.active_scan = False
         self.discovered_devices = {}
         
-    async def scan_classic(self, duration=8):
-        """Scan for classic Bluetooth devices with stealth timing"""
-        self.active_scan = True
-        start_time = time.time()
-        
-        while self.active_scan and (time.time() - start_time < duration):
-            try:
-                # Apply stealth timing
-                await self.stealth_manager.random_delay()
-                
-                devices = discover_devices(lookup_names=True, duration=2, flush_cache=True)
-                for addr, name in devices:
-                    if addr not in self.discovered_devices:
-                        self.discovered_devices[addr] = {
-                            'name': name,
-                            'type': 'classic',
-                            'first_seen': time.time(),
-                            'last_seen': time.time(),
-                            'rssi': 0  # Classic Bluetooth doesn't provide RSSI in this method
-                        }
-                        self.logger.info(f"Discovered classic device: {name} ({addr})")
-                    else:
-                        self.discovered_devices[addr]['last_seen'] = time.time()
-                
-                # Apply jitter to scan duration
+   async def scan_classic(self, duration=12):  # Increased default duration
+    """Scan for classic Bluetooth devices with enhanced reliability"""
+    self.active_scan = True
+    self.discovered_devices = {}  # Reset on each scan
+    start_time = time.time()
+    
+    # Ensure Bluetooth adapter is ready
+    try:
+        subprocess.run(["sudo", "hciconfig", "hci0", "up"], check=True)
+        subprocess.run(["sudo", "hciconfig", "hci0", "piscan"], check=True)
+    except Exception as e:
+        self.logger.error(f"Bluetooth init failed: {str(e)}")
+        return {}
+
+    while self.active_scan and (time.time() - start_time < duration):
+        try:
+            # Extended single scan instead of multiple short ones
+            devices = discover_devices(
+                lookup_names=True,
+                duration=min(10, duration),  # Single 10s max scan
+                flush_cache=True
+            )
+            
+            current_time = time.time()
+            for addr, name in devices:
+                if addr not in self.discovered_devices:
+                    self.discovered_devices[addr] = {
+                        'name': name or 'Unknown',
+                        'type': 'classic',
+                        'first_seen': current_time,
+                        'last_seen': current_time,
+                        'rssi': 0
+                    }
+                    self.logger.info(f"Discovered classic device: {self.discovered_devices[addr]['name']} ({addr})")
+                else:
+                    self.discovered_devices[addr]['last_seen'] = current_time
+
+            # Only sleep if we have time remaining
+            remaining_time = duration - (time.time() - start_time)
+            if remaining_time > 0:
                 await asyncio.sleep(self.stealth_manager.get_jitter())
                 
-            except Exception as e:
-                self.logger.error(f"Classic scan error: {str(e)}")
-                await asyncio.sleep(1)
-                
-        self.active_scan = False
-        return self.discovered_devices
+        except Exception as e:
+            self.logger.error(f"Scan error: {str(e)}")
+            if "Bluetooth not available" in str(e):
+                break  # Don't retry if hardware failed
+            await asyncio.sleep(1)
+
+    self.active_scan = False
+    return self.discovered_devices
 
     async def scan_ble(self, duration=10):
         """Scan for BLE devices with stealth techniques"""

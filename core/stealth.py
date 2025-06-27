@@ -28,7 +28,7 @@ class StealthManager:
             # Advanced: Combine random, pattern, and traffic shaping
             delay = base + (random.random() * multiplier * 0.3) + \
                    (0.3 * sin(self.pattern_phase) + \
-                   (0.4 * sin(self.pattern_phase * 0.5))
+                   (0.4 * sin(self.pattern_phase * 0.5)))
             self.pattern_phase += 0.2
             
         self.logger.debug(f"Applying stealth delay: {delay:.2f}s")

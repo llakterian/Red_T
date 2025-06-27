@@ -1,0 +1,2302 @@
+nohup: ignoring input
+[2025-06-27 23:53:39 +0300] [3662] [INFO] Starting gunicorn 23.0.0
+[2025-06-27 23:53:39 +0300] [3662] [INFO] Listening at: http://0.0.0.0:5000 (3662)
+[2025-06-27 23:53:39 +0300] [3662] [INFO] Using worker: sync
+[2025-06-27 23:53:39 +0300] [3664] [INFO] Booting worker with pid: 3664
+[2025-06-27 23:53:39 +0300] [3665] [INFO] Booting worker with pid: 3665
+[2025-06-27 23:53:39 +0300] [3666] [INFO] Booting worker with pid: 3666
+[2025-06-27 23:53:39 +0300] [3667] [INFO] Booting worker with pid: 3667
+Failed to load vulnerability DB: [Errno 2] No such file or directory: '/home/micro3/Red_T/core/../data/vulnerabilities.json'
+Failed to load exploit DB: [Errno 2] No such file or directory: '/home/micro3/Red_T/core/../data/exploits.json'
+Classic scan error: [Errno 97] Address family not supported by protocol
+Classic scan error: [Errno 97] Address family not supported by protocol
+Classic scan error: [Errno 97] Address family not supported by protocol
+Classic scan error: [Errno 97] Address family not supported by protocol
+Classic scan error: [Errno 97] Address family not supported by protocol
+[2025-06-28 00:04:47 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:3666)
+[2025-06-28 00:04:47 +0300] [3666] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:04:47 +0300] [3666] [INFO] Worker exiting (pid: 3666)
+[2025-06-28 00:04:47 +0300] [4213] [INFO] Booting worker with pid: 4213
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+[2025-06-28 00:05:20 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:3665)
+[2025-06-28 00:05:20 +0300] [3665] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:05:20 +0300] [3665] [INFO] Worker exiting (pid: 3665)
+[2025-06-28 00:05:20 +0300] [4219] [INFO] Booting worker with pid: 4219
+Failed to load vulnerability DB: [Errno 2] No such file or directory: '/home/micro3/Red_T/core/../data/vulnerabilities.json'
+Failed to load exploit DB: [Errno 2] No such file or directory: '/home/micro3/Red_T/core/../data/exploits.json'
+Classic scan error: [Errno 97] Address family not supported by protocol
+Classic scan error: [Errno 97] Address family not supported by protocol
+Classic scan error: [Errno 97] Address family not supported by protocol
+Classic scan error: [Errno 97] Address family not supported by protocol
+[2025-06-28 00:05:51 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:3664)
+[2025-06-28 00:05:51 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4213)
+[2025-06-28 00:05:51 +0300] [4213] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:05:51 +0300] [3664] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:05:51 +0300] [3664] [INFO] Worker exiting (pid: 3664)
+[2025-06-28 00:05:51 +0300] [4213] [INFO] Worker exiting (pid: 4213)
+[2025-06-28 00:05:51 +0300] [4231] [INFO] Booting worker with pid: 4231
+[2025-06-28 00:05:51 +0300] [3662] [ERROR] Worker (pid:3664) was sent SIGKILL! Perhaps out of memory?
+[2025-06-28 00:05:51 +0300] [4232] [INFO] Booting worker with pid: 4232
+Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+Failed to load vulnerability DB: [Errno 2] No such file or directory: '/home/micro3/Red_T/core/../data/vulnerabilities.json'
+Failed to load exploit DB: [Errno 2] No such file or directory: '/home/micro3/Red_T/core/../data/exploits.json'
+Classic scan error: [Errno 97] Address family not supported by protocol
+Classic scan error: [Errno 97] Address family not supported by protocol
+Classic scan error: [Errno 97] Address family not supported by protocol
+Classic scan error: [Errno 97] Address family not supported by protocol
+[2025-06-28 00:06:22 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4231)
+[2025-06-28 00:06:22 +0300] [4231] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:06:22 +0300] [4231] [INFO] Worker exiting (pid: 4231)
+[2025-06-28 00:06:22 +0300] [4244] [INFO] Booting worker with pid: 4244
+Classic scan error: [Errno 97] Address family not supported by protocol
+[2025-06-28 00:06:23 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4219)
+[2025-06-28 00:06:23 +0300] [4219] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:06:23 +0300] [4219] [INFO] Worker exiting (pid: 4219)
+[2025-06-28 00:06:23 +0300] [4249] [INFO] Booting worker with pid: 4249
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+[2025-06-28 00:06:53 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4244)
+[2025-06-28 00:06:53 +0300] [4244] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:06:53 +0300] [4244] [INFO] Worker exiting (pid: 4244)
+[2025-06-28 00:06:54 +0300] [4307] [INFO] Booting worker with pid: 4307
+[2025-06-28 00:06:56 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4232)
+[2025-06-28 00:06:56 +0300] [4232] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:06:56 +0300] [4232] [INFO] Worker exiting (pid: 4232)
+[2025-06-28 00:06:56 +0300] [4312] [INFO] Booting worker with pid: 4312
+Failed to load vulnerability DB: [Errno 2] No such file or directory: '/home/micro3/Red_T/core/../data/vulnerabilities.json'
+Failed to load exploit DB: [Errno 2] No such file or directory: '/home/micro3/Red_T/core/../data/exploits.json'
+Classic scan error: [Errno 97] Address family not supported by protocol
+Classic scan error: [Errno 97] Address family not supported by protocol
+Classic scan error: [Errno 97] Address family not supported by protocol
+Classic scan error: [Errno 97] Address family not supported by protocol
+Classic scan error: [Errno 97] Address family not supported by protocol
+[2025-06-28 00:07:25 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4249)
+[2025-06-28 00:07:25 +0300] [4249] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:07:25 +0300] [4249] [INFO] Worker exiting (pid: 4249)
+[2025-06-28 00:07:25 +0300] [4319] [INFO] Booting worker with pid: 4319
+Classic scan error: [Errno 97] Address family not supported by protocol
+[2025-06-28 00:07:30 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4312)
+[2025-06-28 00:07:30 +0300] [4312] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:07:30 +0300] [4312] [INFO] Worker exiting (pid: 4312)
+[2025-06-28 00:07:30 +0300] [4325] [INFO] Booting worker with pid: 4325
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+[2025-06-28 00:07:56 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4319)
+[2025-06-28 00:07:56 +0300] [4319] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:07:56 +0300] [4319] [INFO] Worker exiting (pid: 4319)
+[2025-06-28 00:07:57 +0300] [4330] [INFO] Booting worker with pid: 4330
+[2025-06-28 00:08:03 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:3667)
+[2025-06-28 00:08:03 +0300] [3667] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:08:03 +0300] [3667] [INFO] Worker exiting (pid: 3667)
+[2025-06-28 00:08:03 +0300] [4336] [INFO] Booting worker with pid: 4336
+[2025-06-28 00:08:29 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4325)
+[2025-06-28 00:08:29 +0300] [4325] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:08:29 +0300] [4325] [INFO] Worker exiting (pid: 4325)
+[2025-06-28 00:08:29 +0300] [4342] [INFO] Booting worker with pid: 4342
+Failed to load vulnerability DB: [Errno 2] No such file or directory: '/home/micro3/Red_T/core/../data/vulnerabilities.json'
+Failed to load exploit DB: [Errno 2] No such file or directory: '/home/micro3/Red_T/core/../data/exploits.json'
+Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+[2025-06-28 00:08:36 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4307)
+[2025-06-28 00:08:36 +0300] [4307] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:08:36 +0300] [4307] [INFO] Worker exiting (pid: 4307)
+[2025-06-28 00:08:36 +0300] [4349] [INFO] Booting worker with pid: 4349
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:BLE scan error: [org.freedesktop.DBus.Error.ServiceUnknown] org.freedesktop.DBus.Error.ServiceUnknown
+[2025-06-28 00:09:00 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4336)
+[2025-06-28 00:09:00 +0300] [4336] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:09:00 +0300] [4336] [INFO] Worker exiting (pid: 4336)
+[2025-06-28 00:09:00 +0300] [4355] [INFO] Booting worker with pid: 4355
+[2025-06-28 00:09:08 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4342)
+[2025-06-28 00:09:08 +0300] [4342] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:09:08 +0300] [4342] [INFO] Worker exiting (pid: 4342)
+[2025-06-28 00:09:09 +0300] [4367] [INFO] Booting worker with pid: 4367
+[2025-06-28 00:09:33 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4355)
+[2025-06-28 00:09:33 +0300] [4355] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:09:33 +0300] [4355] [INFO] Worker exiting (pid: 4355)
+[2025-06-28 00:09:33 +0300] [4379] [INFO] Booting worker with pid: 4379
+[2025-06-28 00:09:40 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4349)
+[2025-06-28 00:09:40 +0300] [4349] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:09:40 +0300] [4349] [INFO] Worker exiting (pid: 4349)
+[2025-06-28 00:09:40 +0300] [4385] [INFO] Booting worker with pid: 4385
+[2025-06-28 00:10:05 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4330)
+[2025-06-28 00:10:05 +0300] [4330] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:10:05 +0300] [4330] [INFO] Worker exiting (pid: 4330)
+[2025-06-28 00:10:05 +0300] [4395] [INFO] Booting worker with pid: 4395
+[2025-06-28 00:10:12 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4367)
+[2025-06-28 00:10:12 +0300] [4367] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:10:12 +0300] [4367] [INFO] Worker exiting (pid: 4367)
+[2025-06-28 00:10:13 +0300] [4401] [INFO] Booting worker with pid: 4401
+[2025-06-28 00:10:38 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4385)
+[2025-06-28 00:10:38 +0300] [4385] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:10:38 +0300] [4385] [INFO] Worker exiting (pid: 4385)
+[2025-06-28 00:10:38 +0300] [4411] [INFO] Booting worker with pid: 4411
+ERROR:Red_T.vulnerabilities:Failed to load vulnerability DB: [Errno 2] No such file or directory: '/home/micro3/Red_T/core/../data/vulnerabilities.json'
+ERROR:Red_T.vulnerabilities:Failed to load exploit DB: [Errno 2] No such file or directory: '/home/micro3/Red_T/core/../data/exploits.json'
+ERROR:Red_T.scanner:BLE scan error: [org.freedesktop.DBus.Error.ServiceUnknown] org.freedesktop.DBus.Error.ServiceUnknown
+ERROR:Red_T.scanner:BLE scan error: [org.freedesktop.DBus.Error.ServiceUnknown] org.freedesktop.DBus.Error.ServiceUnknown
+ERROR:Red_T.scanner:BLE scan error: [org.freedesktop.DBus.Error.ServiceUnknown] org.freedesktop.DBus.Error.ServiceUnknown
+ERROR:Red_T.scanner:BLE scan error: [org.freedesktop.DBus.Error.ServiceUnknown] org.freedesktop.DBus.Error.ServiceUnknown
+ERROR:Red_T.scanner:BLE scan error: [org.freedesktop.DBus.Error.ServiceUnknown] org.freedesktop.DBus.Error.ServiceUnknown
+ERROR:Red_T.scanner:BLE scan error: [org.freedesktop.DBus.Error.ServiceUnknown] org.freedesktop.DBus.Error.ServiceUnknown
+ERROR:Red_T.scanner:BLE scan error: [org.freedesktop.DBus.Error.ServiceUnknown] org.freedesktop.DBus.Error.ServiceUnknown
+ERROR:Red_T.scanner:BLE scan error: [org.freedesktop.DBus.Error.ServiceUnknown] org.freedesktop.DBus.Error.ServiceUnknown
+ERROR:Red_T.scanner:BLE scan error: [org.freedesktop.DBus.Error.ServiceUnknown] org.freedesktop.DBus.Error.ServiceUnknown
+ERROR:Red_T.scanner:BLE scan error: [org.freedesktop.DBus.Error.ServiceUnknown] org.freedesktop.DBus.Error.ServiceUnknown
+[2025-06-28 00:11:00 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4395)
+[2025-06-28 00:11:00 +0300] [4395] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:11:00 +0300] [4395] [INFO] Worker exiting (pid: 4395)
+[2025-06-28 00:11:00 +0300] [4418] [INFO] Booting worker with pid: 4418
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+[2025-06-28 00:11:10 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4411)
+[2025-06-28 00:11:10 +0300] [4411] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:11:10 +0300] [4411] [INFO] Worker exiting (pid: 4411)
+[2025-06-28 00:11:10 +0300] [4424] [INFO] Booting worker with pid: 4424
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+[2025-06-28 00:11:31 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4379)
+[2025-06-28 00:11:31 +0300] [4379] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:11:31 +0300] [4379] [INFO] Worker exiting (pid: 4379)
+[2025-06-28 00:11:32 +0300] [4430] [INFO] Booting worker with pid: 4430
+ERROR:Red_T.scanner:BLE scan error: [org.freedesktop.DBus.Error.ServiceUnknown] org.freedesktop.DBus.Error.ServiceUnknown
+ERROR:Red_T.scanner:BLE scan error: [org.freedesktop.DBus.Error.ServiceUnknown] org.freedesktop.DBus.Error.ServiceUnknown
+[2025-06-28 00:11:43 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4418)
+[2025-06-28 00:11:43 +0300] [4418] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:11:43 +0300] [4418] [INFO] Worker exiting (pid: 4418)
+[2025-06-28 00:11:43 +0300] [4436] [INFO] Booting worker with pid: 4436
+ERROR:Red_T.scanner:BLE scan error: [org.freedesktop.DBus.Error.ServiceUnknown] org.freedesktop.DBus.Error.ServiceUnknown
+ERROR:Red_T.scanner:BLE scan error: [org.freedesktop.DBus.Error.ServiceUnknown] org.freedesktop.DBus.Error.ServiceUnknown
+ERROR:Red_T.scanner:BLE scan error: [org.freedesktop.DBus.Error.ServiceUnknown] org.freedesktop.DBus.Error.ServiceUnknown
+ERROR:Red_T.scanner:BLE scan error: [org.freedesktop.DBus.Error.ServiceUnknown] org.freedesktop.DBus.Error.ServiceUnknown
+ERROR:Red_T.scanner:BLE scan error: [org.freedesktop.DBus.Error.ServiceUnknown] org.freedesktop.DBus.Error.ServiceUnknown
+ERROR:Red_T.scanner:BLE scan error: [org.freedesktop.DBus.Error.ServiceUnknown] org.freedesktop.DBus.Error.ServiceUnknown
+ERROR:Red_T.scanner:BLE scan error: [org.freedesktop.DBus.Error.ServiceUnknown] org.freedesktop.DBus.Error.ServiceUnknown
+[2025-06-28 00:12:05 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4424)
+[2025-06-28 00:12:05 +0300] [4424] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:12:05 +0300] [4424] [INFO] Worker exiting (pid: 4424)
+[2025-06-28 00:12:05 +0300] [4446] [INFO] Booting worker with pid: 4446
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+[2025-06-28 00:12:16 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4436)
+[2025-06-28 00:12:16 +0300] [4436] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:12:16 +0300] [4436] [INFO] Worker exiting (pid: 4436)
+[2025-06-28 00:12:16 +0300] [4452] [INFO] Booting worker with pid: 4452
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+[2025-06-28 00:12:38 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4446)
+[2025-06-28 00:12:38 +0300] [4446] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:12:38 +0300] [4446] [INFO] Worker exiting (pid: 4446)
+[2025-06-28 00:12:39 +0300] [4457] [INFO] Booting worker with pid: 4457
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+ERROR:Red_T.scanner:Classic scan error: [Errno 97] Address family not supported by protocol
+[2025-06-28 00:12:48 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4401)
+[2025-06-28 00:12:48 +0300] [4401] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:12:48 +0300] [4401] [INFO] Worker exiting (pid: 4401)
+[2025-06-28 00:12:48 +0300] [4463] [INFO] Booting worker with pid: 4463
+[2025-06-28 00:13:12 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4452)
+[2025-06-28 00:13:12 +0300] [4452] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:13:12 +0300] [4452] [INFO] Worker exiting (pid: 4452)
+[2025-06-28 00:13:12 +0300] [4469] [INFO] Booting worker with pid: 4469
+[2025-06-28 00:13:20 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4457)
+[2025-06-28 00:13:20 +0300] [4457] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:13:20 +0300] [4457] [INFO] Worker exiting (pid: 4457)
+[2025-06-28 00:13:20 +0300] [4519] [INFO] Booting worker with pid: 4519
+[2025-06-28 00:13:44 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4430)
+[2025-06-28 00:13:44 +0300] [4430] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:13:44 +0300] [4430] [INFO] Worker exiting (pid: 4430)
+[2025-06-28 00:13:44 +0300] [4533] [INFO] Booting worker with pid: 4533
+[2025-06-28 00:13:51 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4519)
+[2025-06-28 00:13:51 +0300] [4519] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:13:51 +0300] [4519] [INFO] Worker exiting (pid: 4519)
+[2025-06-28 00:13:52 +0300] [4539] [INFO] Booting worker with pid: 4539
+[2025-06-28 00:14:17 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4469)
+[2025-06-28 00:14:17 +0300] [4469] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:14:17 +0300] [4469] [INFO] Worker exiting (pid: 4469)
+[2025-06-28 00:14:17 +0300] [4554] [INFO] Booting worker with pid: 4554
+[2025-06-28 00:14:24 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4539)
+[2025-06-28 00:14:24 +0300] [4539] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:14:24 +0300] [4539] [INFO] Worker exiting (pid: 4539)
+[2025-06-28 00:14:24 +0300] [4564] [INFO] Booting worker with pid: 4564
+[2025-06-28 00:14:49 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4554)
+[2025-06-28 00:14:49 +0300] [4554] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:14:49 +0300] [4554] [INFO] Worker exiting (pid: 4554)
+[2025-06-28 00:14:49 +0300] [4570] [INFO] Booting worker with pid: 4570
+[2025-06-28 00:14:55 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4463)
+[2025-06-28 00:14:55 +0300] [4463] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:14:55 +0300] [4463] [INFO] Worker exiting (pid: 4463)
+[2025-06-28 00:14:56 +0300] [4576] [INFO] Booting worker with pid: 4576
+[2025-06-28 00:15:21 +0300] [3662] [CRITICAL] WORKER TIMEOUT (pid:4570)
+[2025-06-28 00:15:21 +0300] [4570] [ERROR] Error handling request /socket.io/?EIO=4&transport=websocket
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/middleware.py", line 63, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/socketio/server.py", line 434, in handle_request
+    return self.eio.handle_request(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 261, in handle_request
+    r = self._handle_connect(environ, start_response,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/server.py", line 416, in _handle_connect
+    ret = s.handle_get_request(environ, start_response)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 92, in handle_get_request
+    return getattr(self, '_upgrade_' + transport)(environ,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 151, in _upgrade_websocket
+    return ws(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 15, in __call__
+    ret = self.app(self)
+          ^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 225, in _websocket_handler
+    p = websocket_wait()
+        ^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/socket.py", line 156, in websocket_wait
+    data = ws.wait()
+           ^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/engineio/async_drivers/_websocket_wsgi.py", line 32, in wait
+    return self.ws.receive()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/simple_websocket/ws.py", line 96, in receive
+    if not self.event.wait(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-06-28 00:15:21 +0300] [4570] [INFO] Worker exiting (pid: 4570)
+[2025-06-28 00:15:21 +0300] [4591] [INFO] Booting worker with pid: 4591
+[2025-06-28 00:15:21 +0300] [4591] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/micro3/Red_T/venv/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/micro3/Red_T/web_ui/server.py", line 7, in <module>
+    from core.scanner import BluetoothScanner
+  File "/home/micro3/Red_T/core/scanner.py", line 15
+    async def scan_classic(self, duration=12):  # Increased default duration
+                                                                            ^
+IndentationError: unindent does not match any outer indentation level
+[2025-06-28 00:15:21 +0300] [4591] [INFO] Worker exiting (pid: 4591)
+[2025-06-28 00:15:21 +0300] [3662] [ERROR] Worker (pid:4591) exited with code 3
+[2025-06-28 00:15:21 +0300] [4564] [INFO] Worker exiting (pid: 4564)
+[2025-06-28 00:15:21 +0300] [4533] [INFO] Worker exiting (pid: 4533)
+[2025-06-28 00:15:51 +0300] [3662] [ERROR] Shutting down: Master
+[2025-06-28 00:15:51 +0300] [3662] [ERROR] Reason: Worker failed to boot.

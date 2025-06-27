@@ -2,7 +2,7 @@ import asyncio
 import time
 from bleak import BleakClient, BleakError
 import bluetooth
-from bluetooth.ble import DiscoveryService
+# from bluetooth.ble import DiscoveryService
 import logging
 from core.stealth import StealthManager
 from core.vulnerabilities import VulnerabilityAssessor
