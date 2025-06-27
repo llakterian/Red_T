@@ -1,4 +1,4 @@
-Red_T - Advanced Bluetooth Exploitation Framework
+## Red_T - Advanced Bluetooth Exploitation Framework
 Red_T is a powerful Bluetooth security assessment and exploitation framework designed for penetration testers and red teams. It provides capabilities for device discovery, vulnerability assessment, stealthy connections, and remote control across multiple platforms (Android, iOS, Windows, Linux).
 
 📌 Features
